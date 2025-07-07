@@ -7,12 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{.Title}}</title>
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Flowbite -->
   <script src="https://unpkg.com/flowbite@2.2.1/dist/flowbite.min.js"></script>
 
+  <!-- Favicon -->
   <link rel="icon" href="/static/favicon.png" />
 </head>
 <body class="bg-white text-gray-900 font-sans">
@@ -25,6 +26,9 @@
         <a href="/" class="hover:underline">Главная</a>
         <a href="/vpn-dlya-raboty" class="hover:underline">Для работы</a>
         <a href="/vpn-dlya-wifi" class="hover:underline">Для Wi-Fi</a>
+        <a href="/about" class="hover:underline">О проекте</a>
+        <a href="/contact" class="hover:underline">Контакты</a>
+        <a href="/privacy-policy" class="hover:underline">Политика конфиденциальности</a>
       </div>
     </div>
   </nav>
@@ -36,8 +40,34 @@
 
   <!-- Футер -->
   <footer class="bg-gray-100 text-center py-6 text-sm text-gray-500">
-    &copy; 2025 VPN Guide. Сайт носит информационный характер.
+    &copy; 2025 VPN Guide. Все материалы носят информационный характер и не являются публичной офертой.  
+    <br />
+    <a href="/privacy-policy" class="text-blue-500 hover:underline">Политика конфиденциальности</a> |
+    <a href="/about" class="text-blue-500 hover:underline">О проекте</a> |
+    <a href="/contact" class="text-blue-500 hover:underline">Контакты</a>
   </footer>
+
+  <!-- Yandex.Metrika -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {
+      if (document.scripts[j].src === r) { return; }
+    }
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(103230741, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+    });
+  </script>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/103230741" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
+  <!-- /Yandex.Metrika -->
+
 </body>
 </html>
 {{end}}
