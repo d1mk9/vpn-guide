@@ -3,8 +3,8 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />    
-  <meta name="verify-admitad" content="371f4ced6c" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="verify-admitad" content="371f4ced6c" />
   <title>{{.Title}}</title>
 
   <!-- Tailwind -->
@@ -15,6 +15,10 @@
 
   <!-- Favicon -->
   <link rel="icon" href="/static/favicon.png" />
+
+  <!-- Yandex.RTB Loader -->
+  <script>window.yaContextCb=window.yaContextCb||[]</script>
+  <script src="https://yandex.ru/ads/system/context.js" async></script>
 </head>
 <body class="bg-white text-gray-900 font-sans">
 
@@ -36,6 +40,19 @@
   <!-- Контент страницы -->
   <main class="max-w-4xl mx-auto px-4 py-8">
     {{template "content" .}}
+
+    <!-- Рекламный блок Яндекс РСЯ -->
+    <div class="my-8">
+      <div id="yandex_rtb_R-A-16168375-1"></div>
+      <script>
+        window.yaContextCb.push(() => {
+          Ya.Context.AdvManager.render({
+            "blockId": "R-A-16168375-1",
+            "renderTo": "yandex_rtb_R-A-16168375-1"
+          });
+        });
+      </script>
+    </div>
   </main>
 
   <!-- Футер -->
@@ -47,26 +64,23 @@
     <a href="/contact" class="text-blue-500 hover:underline">Контакты</a>
   </footer>
 
-  <!-- Yandex.Metrika -->
+  <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    for (var j = 0; j < document.scripts.length; j++) {
-      if (document.scripts[j].src === r) { return; }
-    }
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {
+        if (document.scripts[j].src === r) return;
+      }
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
     ym(103230741, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true
     });
   </script>
-  <noscript>
-    <div><img src="https://mc.yandex.ru/watch/103230741" style="position:absolute; left:-9999px;" alt="" /></div>
-  </noscript>
-  <!-- /Yandex.Metrika -->
+  <noscript><div><img src="https://mc.yandex.ru/watch/103230741" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
 </body>
 </html>
