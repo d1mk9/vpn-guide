@@ -1,0 +1,43 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />    
+  <meta name="verify-admitad" content="371f4ced6c" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{.Title}}</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Flowbite -->
+  <script src="https://unpkg.com/flowbite@2.2.1/dist/flowbite.min.js"></script>
+
+  <link rel="icon" href="/static/favicon.png" />
+</head>
+<body class="bg-white text-gray-900 font-sans">
+
+  <!-- Навигация -->
+  <nav class="bg-blue-600 text-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="text-xl font-bold">VPN Guide</a>
+      <div class="space-x-4">
+        <a href="/" class="hover:underline">Главная</a>
+        <a href="/vpn-dlya-raboty" class="hover:underline">Для работы</a>
+        <a href="/vpn-dlya-wifi" class="hover:underline">Для Wi-Fi</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Контент страницы -->
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    {{template "content" .}}
+  </main>
+
+  <!-- Футер -->
+  <footer class="bg-gray-100 text-center py-6 text-sm text-gray-500">
+    &copy; 2025 VPN Guide. Сайт носит информационный характер.
+  </footer>
+</body>
+</html>
+{{end}}
